@@ -19,50 +19,49 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body{
     font-family: "Helvetica Neue Thin";
     color: rgba(255, 255, 255, 1);
 }
-
 header{
     height: 20vh;
     background: rgba(255, 255, 255, 1) url(../img/header.png) no-repeat center;
     background-size: contain;
 }
-
-main,
-.video,
-.playlist{
+main{
     background: rgba(17, 17, 17, 1);
 }
-.video{
-    background: grey;
+.navigation{
+    padding: 0;
 }
-
 .playlist{
     list-style-type: none;
     padding: 0;
+    overflow: scroll;
 }
-
 .playlist li{
-    padding: 20px 0;
+    padding: 25px 20px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .playlist li:first-child{
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.playlist li:hover{
+    background: rgba(184, 26, 23, 1);
+}
+.playlist li.active{
+    background: rgba(184, 26, 23, 1);
 }
 @media (min-width: 61.9em) {
     body{
         height: 100vh;
         overflow: hidden;
     }
-    main,
-    .video,
-    .playlist{
-        height: 60vh;
+    main{
+        height: 80vh;
     }
-    .playlist{
-        overflow: scroll;
+    .navigation{
+        height: 80vh;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
     }
 }
