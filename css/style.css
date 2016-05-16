@@ -1,67 +1,72 @@
 @font-face {
-    font-family: "Helvetica Neue Thin";
-    src: url("../fonts/helvetica-neue_thin.woff") format("woff"),
-    url("../fonts/helvetica-neue_thin.woff2") format("svg");
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Helvetica Neue Thin";
+	font-weight: normal;
+	font-style: normal;
+
+	src: url("../fonts/helvetica-neue_thin.woff") format("woff"),
+	url("../fonts/helvetica-neue_thin.woff2") format("svg");
 }
-@font-face {
-    font-family: "Helvetica Neue Light";
-    src: url("../fonts/helvetica-neue_light.woff") format("woff"),
-    url("../fonts/helvetica-neue_light.woff2") format("svg");
-    font-weight: normal;
-    font-style: normal;
+body {
+	color: rgba(255, 255, 255, 1);
+	background: rgba(17, 17, 17, 1);
+
+	font-family: "Helvetica Neue Thin", Arial, sans-serif;
+	font-size: 13px;
 }
-@font-face {
-    font-family: "Helvetica Neue Medium";
-    src: url("../fonts/helvetica-neue_medium.woff") format("woff"),
-    url("../fonts/helvetica-neue_medium.woff2") format("svg");
-    font-weight: normal;
-    font-style: normal;
+.navigation,
+.video,
+.playlist {
+	padding: 0;
+
+	list-style-type: none;
 }
-body{
-    font-family: "Helvetica Neue Thin";
-    color: rgba(255, 255, 255, 1);
+.playlist li {
+	padding: 10px 20px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
-header{
-    height: 20vh;
-    background: rgba(255, 255, 255, 1) url(../img/header.png) no-repeat center;
-    background-size: contain;
+.playlist li:last-child {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-main{
-    background: rgba(17, 17, 17, 1);
+.playlist li:hover,
+.playlist li.active {
+	cursor: pointer;
+
+	background: rgba(184, 26, 23, 1);
 }
-.navigation{
-    padding: 0;
+.playlist .season {
+	padding-top: 25px;
+
+	text-align: center;
 }
-.playlist{
-    list-style-type: none;
-    padding: 0;
-    overflow: scroll;
+.playlist .season:hover {
+	cursor: default;
+
+	background: none;
 }
-.playlist li{
-    padding: 25px 20px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.playlist li:first-child{
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
-.playlist li:hover{
-    background: rgba(184, 26, 23, 1);
-}
-.playlist li.active{
-    background: rgba(184, 26, 23, 1);
+.season h2 {
+	font-size: 20px;
 }
 @media (min-width: 61.9em) {
-    body{
-        height: 100vh;
-        overflow: hidden;
-    }
-    main{
-        height: 80vh;
-    }
-    .navigation{
-        height: 80vh;
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-    }
+	body {
+		overflow: hidden;
+	}
+	body,
+	main,
+	.video,
+	.navigation,
+	.playlist {
+		height: 100vh;
+	}
+	.video .embed-responsive {
+		top: 50%;
+
+		transform: translateY(-50%);
+	}
+	.navigation {
+		border-left: 1px solid rgba(255, 255, 255, 0.3);
+	}
+	.playlist {
+		overflow: scroll;
+	}
 }
